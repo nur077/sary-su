@@ -1,89 +1,362 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+  <title>Sary-su construction</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-MBXmE4nZQfhx9+HTTxSW3NpqwgnDqJcPbMPbDhq1Jj9+VePms6/gz9E4U6E3Kre5UlROPM/9b5w1rFq0kCCJQ==" crossorigin="anonymous" />
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.7.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.7.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.7.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.7.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.7.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.7.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.7.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.7.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.7.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.7.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+   <!-- Firebase -->
+   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js"></script>
+  <style>
+    #about {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <section class="header">
+    <nav class="menu">
+      <!--<a href="index.html"><img src="img/photo1.jpg"></a>-->
+      <a href="index.html"></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="#">ГЛАВНАЯ</a></li>
+            <li><a href="#about">О НАС</a></li>
+            <li><a href="#service">УСЛУГИ</a></li>
+            <li><a href="#photo">ГАЛЕРЕЯ</a></li>
+            <li><a href="#contacts">КОНТАКТЫ</a></li>
+          </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+  <div class="text-box">
+    <h1>Sary-su</h1>
+    <h1>construction company</h1>
+    <!---<a href="" class="hero-btn">visit us</a>-->
+  </div>
+  </section>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+  <!--О нас-->
+  <section class="about" id="about">
+    <h1 lang="ru">О нас</h1>
+    <p><b class="less-bold">SARY-SU construction company</b> - динамичная казахстанская компания, сфокусированная на промышленном и гражданском строительстве. Наши эксперты владеют уникальным опытом в создании проектов "под ключ" промышленного и гражданского назначения. Профессиональный подход к процессам позволяет нам полностью управлять этапами проекта в рамках контракта, принимая на себя все риски и гарантируя максимальное качество перед Заказчиками.</p>
+    <p><b>SARY-SU construction company</b> предлагает своему Заказчику:</p>
+    <ul class="special">
+      <li><b>Профессионализм и Опыт:</b> Наши специалисты обладают выдающимися навыками в области промышленного и гражданского строительства, гарантируя высочайший уровень профессионализма.</li>
+      <li><b>Индивидуальный Подход:</b> Мы ценим уникальность каждого клиента. Наш индивидуальный подход учитывает специфику Вашего бизнеса, обеспечивая максимальное соответствие проекта вашим ожиданиям.</li>
+      <li><b>Качество на всех этапах:</b> От первоначального проектирования до финального воплощения идеи - мы гарантируем высокое качество выполнения работ, внимание к деталям и соответствие всем стандартам.</li>
+      <li><b>Ресурсы и Конкурентоспособность:</b> Наличие необходимых трудовых и материально-технических ресурсов позволяет нам успешно конкурировать по цене, срокам и качеству.</li>
+      <li><b>Коллектив:</b> Состоит из высокопрофессиональных сотрудников, готовых решать самые сложные задачи в соответствии с вашими требованиями.</li>
+      <li><b>Гибкий график и Мобильность:</b>
+        Обеспечиваем беспрерывную доступность и оперативный отклик на запросы в течение суток, готовы быстро реагировать в разнообразных климатических условиях.</li>
+    </ul>
+    <p>Специалисты компании готовы оперативно выехать в любую точку Казахстана.</p>
+  </section>
 
+  <!-- Услуги -->
+  <section class="service" id="service">
+    <h1 lang="ru">Услуги</h1>
+    <p>
+      <b>SARY-SU Construction Company</b> предоставляет комплексные услуги по устройству буронабивных свай с применением инвентарных обсадных труб диаметром 600-800-1000-1200-1500 мм и осуществляет другие виды свайных работ во всех регионах Казахстана. Наши специалисты используют передовые технологии, включая вращатель и гидравлический домкрат, для точного контроля и эффективного погружения обсадных труб.
+    </p>
+
+    <p>Технологический процесс включает в себя опережающее бурение скважины с использованием обсадной трубы, оснащенной армированным наконечником. Обсадная труба, состоящая из нескольких секций, жестко соединенных между собой, погружается в грунт вращателем. По мере углубления скважины происходит извлечение грунта с помощью шнека и наращивание следующей секции. Технологический шнек, закрепленный на конце телескопической штанги Келли, обеспечивает эффективную очистку обсадной трубы.</p>
+
+    <p>Операции по бурению скважин и извлечению грунта систематически повторяются на каждом этапе погружения обсадных труб. По достижении проектной глубины выполняется извлечение бурового инструмента, зачистка забоя от шлама, установка и фиксация арматурного каркаса, а затем бетонирование сваи методом вертикально перемещающейся трубы (ВПТ).</p>
+
+    <p><strong>Преимущества:</strong></p>
+    <p>Эффективность применение данной технологии обуславливается:</p>
+    <ul class="special">
+      <li><strong>Универсальность в обработке разнообразных почв:</strong> Возможность выполнения работ в разнообразных типах грунтов, обеспечивая широкий спектр применения.</li>
+      <li><b>Безвибрационная технология:</b> Отсутствие динамических и вибрационных воздействий на грунт при создании ограждающих конструкций вблизи существующих зданий и сооружений, гарантируя их сохранность.</li>
+      <li><b>Современное оборудование и Контроль:</b> Использование современного оборудования буровой установки, которое позволяет тщательно контролировать процесс бурения, разбуривания и извлечения валунов.</li>
+      <li><b>Прямой контроль характеристик грунта:</b> Возможность прямого контроля характеристик грунта в процессе бурения, что обеспечивает соответствие проектным параметрам.</li>
+      <li><b>Эффективная работа с водонасыщенными грунтами:</b> При прохождении водонасыщенных грунтов предотвращается выпор воды в скважину благодаря грунтовой пробке и управлению избыточным давлением в скважине.</li>
+      <li><b>Надежная защита стенок скважины:</b> Эффективная защита стенок скважины от обрушения, обеспечивая безопасность процесса.</li>
+      <li><b>Исключение дефектов в стволах сваи:</b> Заполнение скважины через бетонолитную трубу предотвращает образование шеек и дефектов в стволах свай.</li>
+      <li><b>Высокое качество заполнения скважины бетоном: </b> Гарантируем высокое качество заполнения скважины бетоном, обеспечивая прочность и долговечность.</li>
+      <li><b>Другие возможности:</b>
+        Мы предоставляем шанс расширить основание сваи, чтобы максимально усилить ее несущую способность.</li>
+    </ul>
+    <p>Обращаясь в компанию <b>SARY-SU construction company</b> Вы всегда можете быть уверены в качестве проводимых работ! Устройство буронабивных свай — одно из ведущих направлений деятельности наших специалистов.
+      Буронабивные сваи характеризуются очень высокой несущей способностью, поэтому данную технологию часто используют при создании фундаментов промышленных зданий, высотных жилых комплексов, мостов и пр.</p>
+
+    <button type="button" id="btn" onclick="scrolltoTop()"><i class="fa fa-arrow-up"></i></button>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      let button = document.getElementById("btn");
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+      window.onscroll = function() {
+        if (document.documentElement.scrollTop > 70) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
         }
-      });
+      }
+      function scrolltoTop(){
+        /*document.documentElement.scrollTop = 0;*/
+        scrollToTopAnimated();
+      }
+      function scrollToTopAnimated() {
+        const currentScroll = document.documentElement.scrollTop;
+
+        if (currentScroll > 0) {
+          window.requestAnimationFrame(scrollToTopAnimated);
+          document.documentElement.scrollTop = currentScroll - currentScroll / 10;
+        }
+      }
     </script>
-  </body>
+  </section>
+
+  <!--Фото-->
+  <section class="photo" id="photo">
+    <div class="carousel image-container">
+      <div id="images" class="wrapper" data-ride="carousel">
+        <img src="img/photo2.jpeg" alt=""/>
+        <img src="img/photo1.jpg" alt=""/>
+        <img src="img/photo3.jpeg" alt=""/>
+        <img src="img/photo5.jpeg" alt=""/>
+        <img src="img/photo4.jpeg" alt=""/>
+      </div>
+      <div class="buttons">
+        <button id="prev">
+          <i class="fa fa-backward"></i>
+        </button>
+        <button id="next">
+          <i class="fa fa-forward"></i>
+        </button>
+      </div>
+    </div>
+    <script src="main.js
+    "></script>
+  </section>
+
+  <!--Контакты-->
+
+  <section class="contacts" id="contacts">
+    <div class="background">
+        <div class="container">
+            <div class="screen">
+                <div class="screen-header">
+                    <div class="screen-header-left">
+                        <div class="screen-header-button close"></div>
+                        <div class="screen-header-button maximize"></div>
+                        <div class="screen-header-button minimize"></div>
+                    </div>
+                    <div class="screen-header-right">
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                    </div>
+                </div>
+                <div class="screen-body">
+                    <div class="screen-body-item left">
+                        <div class="app-title">
+                            <span>СВЯЖИТЕСЬ С НАМИ</span>
+                        </div>
+                        <div class="app-contact">
+                            <span>ОФИС: </span>
+                            <br>
+                            <span>г.Шымкент, Каратауский район, 237 квартал, 251 строение</span>
+                            <br>
+                            <br>
+                            <span>ТЕЛ:
+                              +7(700)1118484
+                              <i class="fa fa-whatsapp whatsapp-icon"></i>
+                            </span>
+                            <br>
+                            <span>
+                              +7(701)3510557
+                              <i class="fa fa-whatsapp whatsapp-icon"></i>
+                            </span>
+                            <br>
+                            <br>
+                            <span>ПОЧТА: mmm.group.ltd@mail.ru</span>
+                            <br>
+                            <br>
+                            <span>ВРЕМЯ РАБОТЫ:</span>
+                            <br>
+                            <span>ПН-ПТ 08:00-18:00</span>
+                        </div>
+                    </div>
+                    <div class="screen-body-item">
+                      <div class="app-form">
+                          <form action="https://formsubmit.co/nurdauletkenesbek@gmail.com" onsubmit="return false;" class="app-form" method="POST">
+                              <div class="app-form-group">
+                                  <input type="text" name="name" class="app-form-control" placeholder="ФИО" required>
+                              </div>
+                              <div class="app-form-group">
+                                  <input type="email" name="email" class="app-form-control" placeholder="ПОЧТА" required>
+                              </div>
+                              <div class="app-form-group">
+                                  <input type="text" name="phone" class="app-form-control" placeholder="ТЕЛЕФОН" required>
+                              </div>
+                              <div class="app-form-group message">
+                                  <textarea name="message" class="app-form-control" rows="4" placeholder="СООБЩЕНИЕ" required></textarea>
+                              </div>
+                              <input type="hidden" name="next" value="https://sary-su.web.app/#">
+                              <div class="app-form-group buttons_contact">
+                                  <button type="reset" class="app-form-button" name="reset">ОТМЕНА</button>
+                                  <button type="submit" class="app-form-button">ОТПРАВИТЬ</button>
+                              </div>
+                          </form>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      const form = document.querySelector(".app-form");
+      // function to send message
+      function sendMsg(e) {
+        e.preventDefault();
+        const name = form.querySelector('[name="name"]').value,
+              email = form.querySelector('[name="email"]').value,
+              phone = form.querySelector('[name="phone"]').value,
+              msg = form.querySelector('[name="message"]').value;
+
+        if (!email.trim() || !email.includes('@')) {
+          alert("Пожалуйста, введите корректный адрес электронной почты.");
+          return;
+        }
+
+        if (!phone.trim()) {
+          alert("Пожалуйста, введите номер телефона.");
+          return;
+        }
+
+        if (!name.trim()) {
+          alert("Пожалуйста, введите ваше имя.");
+          return;
+        }
+
+        if (!msg.trim()) {
+          alert("Пожалуйста, введите ваше сообщение.");
+          return;
+        }
+
+        Email.send({
+          SecureToken: "95cbfe53-c77d-4964-822e-9d9a4ad46e7f",
+          // fae49b5c-bbe9-4ac8-964d-b4e36f1b0269
+          // e00fda64-a187-4dc1-81da-fbf72e0966dd
+          To: "mmm.group.ltd@mail.ru, sarysu.company@gmail.com",
+          From: "mmm.group.ltd@mail.ru, sarysu.company@gmail.com",
+          Subject: "Sary-su company",
+          Body: `Name: ${name}<br>Email: ${email}<br>Phone: ${phone}<br>Message: ${msg}`
+        }).then(
+          () => {
+            alert("Сообщение успешно доставлено");
+            //window.location.href = form.querySelector('input[name="next"]').value;
+            const currentURL = window.location.href;
+            const isThankYouPage = currentURL.includes("thankyou.html");
+
+            if (isThankYouPage) {
+                window.location.href = form.querySelector('input[name="next"]').value;
+            } else {
+                window.location.href = "https://sary-su.web.app/thankyou.html";
+            }
+          },
+          error => {
+            console.error("Error sending email:", error);
+            alert("Ошибка при отправке сообщения. Пожалуйста, попробуйте позже.");
+          }
+        ).finally(() => {
+          if (form && typeof form.reset === 'function') {
+            form.reset();
+          } else {
+            console.error("Form element not found or does not have a reset method.");
+          }
+        });
+      }
+      //event Listener
+      // smtp.elasticemail.com
+      // 55833FFA5AF14FBDEBBB75D3F14B29946104
+      form.addEventListener("submit", sendMsg);
+    </script>
+  </section>
+  <!--footer-->
+  <footer>
+    <p>&copy; 2021 &quot; SARY-SU construction company &quot;</p>
+  </footer>
+
+
+  <!-- Toggle menu -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $(".menu a").on('click', function(){
+        $("html, body").animate({
+          scrollTop: $($.attr(this, 'href')).offset().top
+        }, 530);
+      });
+    });
+  </script>
+
+  <script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+      navLinks.style.right = "0";
+    }
+    function hideMenu(){
+      navLinks.style.right = "-200px";
+    }
+
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+  <script>
+    window.addEventListener("scroll", function () {
+      // Если страница прокручивается вправо, прокрутите обратно влево
+      if (window.scrollX > 0) {
+        window.scrollTo(0, window.scrollY);
+      }
+    });
+  </script>
+  <script>
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "firebase/app";
+    import { getAnalytics } from "firebase/analytics";
+    // TODO: Add SDKs for Firebase products that you want to use
+    import { initializeApp } from "firebase/app";
+    import { getAnalytics } from "firebase/analytics";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyB57VX-E4YNQ91AouFme5onmsP-9Vv55lM",
+      authDomain: "sarysu-construction.firebaseapp.com",
+      projectId: "sarysu-construction",
+      storageBucket: "sarysu-construction.appspot.com",
+      messagingSenderId: "230522633578",
+      appId: "1:230522633578:web:0214def2d8d1309fb9f913",
+      measurementId: "G-2H1LNQ6RTD"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
+</body>
 </html>
