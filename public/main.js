@@ -1,3 +1,4 @@
+/*
 var images = document.getElementById("images");
 var prevBtn = document.getElementById("prev");
 var forwardBtn = document.getElementById("next");
@@ -30,4 +31,45 @@ prevBtn.addEventListener("click", () => {
   position--;
   changeImage();
 });
+*/
 
+
+var images = document.getElementById("images");
+var prevBtn = document.getElementById("prev");
+var forwardBtn = document.getElementById("next");
+var img = document.getElementsByTagName("img");
+
+var position = 0;
+
+function changeImage() {
+  const totalWidth = calculateTotalWidth();
+  const newPosition = -position * totalWidth;
+
+  images.style.transition = "transform 0.5s ease-in-out";
+  images.style.transform = `translateX(${newPosition}px)`;
+}
+
+function calculateTotalWidth() {
+  // Calculate the total width of all images combined
+  const totalWidth = Array.from(img).reduce((sum, image) => sum + image.width, 0);
+  return totalWidth;
+}
+
+function updateCarousel() {
+  position++;
+  changeImage();
+}
+
+forwardBtn.addEventListener("click", updateCarousel);
+prevBtn.addEventListener("click", () => {
+  position--;
+  changeImage();
+});
+
+window.addEventListener("resize", () => {
+  images.style.transition = "none";
+  changeImage();
+});
+
+// Initial call to set up the initial image position
+changeImage();

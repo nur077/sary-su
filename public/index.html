@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-MBXmE4nZQfhx9+HTTxSW3NpqwgnDqJcPbMPbDhq1Jj9+VePms6/gz9E4U6E3Kre5UlROPM/9b5w1rFq0kCCJQ=="
     crossorigin="anonymous" />
-    
+
   <style>
     #about {
       scroll-behavior: smooth;
@@ -35,14 +35,14 @@
       <div class="nav-links" id="navLinks">
         <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
-          <li><a href="#">ГЛАВНАЯ</a></li>
-          <li><a href="#about">О НАС</a></li>
-          <li><a href="#service">УСЛУГИ</a></li>
-          <li><a href="#photo">ГАЛЕРЕЯ</a></li>
-          <li><a href="#contacts">КОНТАКТЫ</a></li>
+          <li><a href="#" onclick="handleLinkClick('home')">ГЛАВНАЯ</a></li>
+          <li><a href="#about" onclick="handleLinkClick('about')">О НАС</a></li>
+          <li><a href="#service" onclick="handleLinkClick('service')">УСЛУГИ</a></li>
+          <li><a href="#photo" onclick="handleLinkClick('photo')">ГАЛЕРЕЯ</a></li>
+          <li><a href="#contacts" onclick="handleLinkClick('contacts')">КОНТАКТЫ</a></li>
         </ul>
       </div>
-      <i class="fa fa-bars" onclick="showMenu()"></i>
+      <i class="fa fa-bars" onclick="toggleMenu()"></i>
     </nav>
     <div class="text-box">
       <h1>Sary-su</h1>
@@ -126,55 +126,57 @@
       Буронабивные сваи характеризуются очень высокой несущей способностью, поэтому данную технологию часто используют
       при создании фундаментов промышленных зданий, высотных жилых комплексов, мостов и пр.</p>
 
-    <button type="button" id="btn" onclick="scrolltoTop()"><i class="fa fa-arrow-up"></i></button>
-    <script>
-      let button = document.getElementById("btn");
-
-      window.onscroll = function () {
-        if (document.documentElement.scrollTop > 70) {
-          button.style.display = "block";
-        } else {
-          button.style.display = "none";
-        }
-      }
-      function scrolltoTop() {
-        /*document.documentElement.scrollTop = 0;*/
-        scrollToTopAnimated();
-      }
-      function scrollToTopAnimated() {
-        const currentScroll = document.documentElement.scrollTop;
-
-        if (currentScroll > 0) {
-          window.requestAnimationFrame(scrollToTopAnimated);
-          document.documentElement.scrollTop = currentScroll - currentScroll / 10;
-        }
-      }
-    </script>
   </section>
 
   <!--Фото-->
-  <section class="photo" id="photo">
-    <div class="carousel image-container">
-      <div id="images" class="wrapper" data-ride="carousel">
-        <img src="img/photo2.jpeg" alt="" />
-        <img src="img/photo1.jpg" alt="" />
-        <img src="img/photo3.jpeg" alt="" />
-        <img src="img/photo5.jpeg" alt="" />
-        <img src="img/photo4.jpeg" alt="" />
+  <!--
+    <section class="photo" id="photo">
+      <div class="carousel image-container">
+        <div id="images" class="wrapper" data-ride="carousel">
+          <img src="img/photo2.jpeg" alt="Photo 2" width="756" height="739" />
+          <img src="img/photo1.jpg" alt="Photo 1" width="424" height="537" />
+          <img src="img/photo3.jpeg" alt="Photo 3" width="3024" height="4032" />
+          <img src="img/photo5.jpeg" alt="Photo 5" width="3024" height="2496" />
+          <img src="img/photo4.jpeg" alt="Photo 4" width="3024" height="4032" />
+        </div>
+        <div class="buttons">
+          <button id="prev">
+            <i class="fa fa-backward"></i>
+          </button>
+          <button id="next">
+            <i class="fa fa-forward"></i>
+          </button>
+        </div>
       </div>
-      <div class="buttons">
-        <button id="prev">
-          <i class="fa fa-backward"></i>
-        </button>
-        <button id="next">
-          <i class="fa fa-forward"></i>
-        </button>
+      <script src="main.js
+      "></script>
+    </section>
+  -->
+  <!--
+    slide1 - photo2
+    slide2 - photo1
+    slide3 - photo3
+    slide4 - photo5
+    slide5 - photo4
+  -->
+  <section class="container_" id="photo">
+    <div class="slider-wrapper">
+      <div class="slider_">
+        <img id="slide-1" src="img/photo2.jpeg" />
+        <img id="slide-2" src="img/photo1.jpg" />
+        <img id="slide-3" src="img/photo3.jpeg" />
+        <img id="slide-4" src="img/photo5.jpeg" />
+        <img id="slide-5" src="img/photo4.jpeg" />
+      </div>
+      <div class="slider-nav">
+        <a href="#slide-1"></a>
+        <a href="#slide-2"></a>
+        <a href="#slide-3"></a>
+        <a href="#slide-4"></a>
+        <a href="#slide-5"></a>
       </div>
     </div>
-    <script src="main.js
-    "></script>
   </section>
-
   <!--Контакты-->
 
   <section class="contacts" id="contacts">
@@ -217,6 +219,8 @@
                 <br>
                 <span>ПОЧТА: mmm.group.ltd@mail.ru</span>
                 <br>
+                <span>sarysu.company@gmail.com</span>
+                <br>
                 <br>
                 <span>ВРЕМЯ РАБОТЫ:</span>
                 <br>
@@ -240,7 +244,7 @@
                     <textarea name="message" class="app-form-control" rows="4" placeholder="СООБЩЕНИЕ"
                       required></textarea>
                   </div>
-                  <input type="hidden" name="next" value="https://sary-su.web.app/#">
+                  <input type="hidden" name="next" value="https://sary-su-construction.web.app/#">
                   <div class="app-form-group buttons_contact">
                     <button type="reset" class="app-form-button" name="reset">ОТМЕНА</button>
                     <button type="submit" class="app-form-button">ОТПРАВИТЬ</button>
@@ -255,77 +259,79 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
       const form = document.querySelector(".app-form");
-      // function to send message
-      function sendMsg(e) {
-        e.preventDefault();
-        const name = form.querySelector('[name="name"]').value,
-          email = form.querySelector('[name="email"]').value,
-          phone = form.querySelector('[name="phone"]').value,
-          msg = form.querySelector('[name="message"]').value;
+      function sendEmail(recipient, name, email, phone, msg) {
+          Email.send({
+              SecureToken: "7c44a820-6b54-4137-8998-add9d975a9f1",
+              To: recipient,
+              From: "sarysu.company@gmail.com",
+              Subject: "Sary-su company",
+              Body: `Name: ${name}<br>Email: ${email}<br>Phone: ${phone}<br>Message: ${msg}`
+          }).then(
+              () => {
+                  const currentURL = window.location.href;
+                  const isThankYouPage = currentURL.includes("thankyou.html");
 
-        if (!email.trim() || !email.includes('@')) {
-          alert("Пожалуйста, введите корректный адрес электронной почты.");
-          return;
-        }
-
-        if (!phone.trim()) {
-          alert("Пожалуйста, введите номер телефона.");
-          return;
-        }
-
-        if (!name.trim()) {
-          alert("Пожалуйста, введите ваше имя.");
-          return;
-        }
-
-        if (!msg.trim()) {
-          alert("Пожалуйста, введите ваше сообщение.");
-          return;
-        }
-
-        Email.send({
-          SecureToken: "95cbfe53-c77d-4964-822e-9d9a4ad46e7f",
-          // fae49b5c-bbe9-4ac8-964d-b4e36f1b0269
-          // e00fda64-a187-4dc1-81da-fbf72e0966dd
-          To: "mmm.group.ltd@mail.ru, sarysu.company@gmail.com",
-          From: "mmm.group.ltd@mail.ru, sarysu.company@gmail.com",
-          Subject: "Sary-su company",
-          Body: `Name: ${name}<br>Email: ${email}<br>Phone: ${phone}<br>Message: ${msg}`
-        }).then(
-          () => {
-            alert("Сообщение успешно доставлено");
-            //window.location.href = form.querySelector('input[name="next"]').value;
-            const currentURL = window.location.href;
-            const isThankYouPage = currentURL.includes("thankyou.html");
-
-            if (isThankYouPage) {
-              window.location.href = form.querySelector('input[name="next"]').value;
-            } else {
-              window.location.href = "https://sary-su.web.app/thankyou.html";
-            }
-          },
-          error => {
-            console.error("Error sending email:", error);
-            alert("Ошибка при отправке сообщения. Пожалуйста, попробуйте позже.");
-          }
-        ).finally(() => {
-          if (form && typeof form.reset === 'function') {
-            form.reset();
-          } else {
-            console.error("Form element not found or does not have a reset method.");
-          }
-        });
+                  if (isThankYouPage) {
+                      window.location.href = form.querySelector('input[name="next"]').value;
+                  } else {
+                      window.location.href = "https://sary-su-construction.web.app/thankyou.html";
+                  }
+              },
+              error => {
+                  console.error(`Error sending email to ${recipient}:`, error);
+                  alert(`Ошибка при отправке сообщения на ${recipient}. Пожалуйста, попробуйте позже.`);
+              }
+          );
       }
-      //event Listener
-      // smtp.elasticemail.com
-      // 55833FFA5AF14FBDEBBB75D3F14B29946104
+
+      function sendMsg(e) {
+          e.preventDefault();
+          const name = form.querySelector('[name="name"]').value,
+              email = form.querySelector('[name="email"]').value,
+              phone = form.querySelector('[name="phone"]').value,
+              msg = form.querySelector('[name="message"]').value;
+
+          if (!email.trim() || !email.includes('@')) {
+              alert("Пожалуйста, введите корректный адрес электронной почты.");
+              return;
+          }
+
+          if (!phone.trim()) {
+              alert("Пожалуйста, введите номер телефона.");
+              return;
+          }
+
+          if (!name.trim()) {
+              alert("Пожалуйста, введите ваше имя.");
+              return;
+          }
+
+          if (!msg.trim()) {
+              alert("Пожалуйста, введите ваше сообщение.");
+              return;
+          }
+          sendEmail("sarysu.company@gmail.com", name, email, phone, msg);
+          sendEmail("mmm.group.ltd@mail.ru", name, email, phone, msg);
+
+          alert(`Сообщение успешно доставлено!`);
+      }
+
       form.addEventListener("submit", sendMsg);
     </script>
   </section>
   <!--footer-->
+  <!--
   <footer>
     <p>&copy; 2021 &quot; SARY-SU construction company &quot;</p>
   </footer>
+  -->
+  <footer>
+    <div class="footer-text">
+      &copy; 2021 &quot; SARY-SU construction company &quot;
+    </div>
+  </footer>
+
+
 
 
   <!-- Toggle menu -->
@@ -345,9 +351,17 @@
 
     function showMenu() {
       navLinks.style.right = "0";
+      document.body.style.overflow = "hidden";
+      document.body.addEventListener('click', handleOutsideClick);
+      document.body.addEventListener('wheel', handleDocumentScroll);
+      document.body.addEventListener('touchmove', handleDocumentScroll);
     }
     function hideMenu() {
       navLinks.style.right = "-200px";
+      document.body.style.overflow = "auto";
+      document.body.removeEventListener('click', handleOutsideClick);
+      document.body.removeEventListener('wheel', handleDocumentScroll);
+      document.body.removeEventListener('touchmove', handleDocumentScroll);
     }
 
     function scrollToSection(sectionId) {
@@ -355,6 +369,32 @@
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
       }
+      hideMenu();
+    }
+
+    function toggleMenu() {
+      if (getComputedStyle(navLinks).right === "0px") {
+        hideMenu();
+      } else {
+        showMenu();
+      }
+    }
+
+    function handleOutsideClick(event) {
+      if (getComputedStyle(navLinks).right !== "-200px" && !navLinks.contains(event.target) && event.target.tagName.toLowerCase() !== 'i') {
+        hideMenu();
+      }
+    }
+
+    function handleDocumentScroll() {
+      if (getComputedStyle(navLinks).right === "0px" && event.deltaY !== 0) {
+        hideMenu();
+      }
+    }
+
+    function handleLinkClick(sectionId) {
+      console.log("Link clicked: " + sectionId);
+      hideMenu();
     }
   </script>
   <script>
@@ -370,27 +410,49 @@
     import { initializeApp } from "firebase/app";
     import { getAnalytics } from "firebase/analytics";
     // TODO: Add SDKs for Firebase products that you want to use
-    import { initializeApp } from "firebase/app";
-    import { getAnalytics } from "firebase/analytics";
-    // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
 
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
-      apiKey: "AIzaSyB57VX-E4YNQ91AouFme5onmsP-9Vv55lM",
-      authDomain: "sarysu-construction.firebaseapp.com",
-      projectId: "sarysu-construction",
-      storageBucket: "sarysu-construction.appspot.com",
-      messagingSenderId: "230522633578",
-      appId: "1:230522633578:web:0214def2d8d1309fb9f913",
-      measurementId: "G-2H1LNQ6RTD"
+      apiKey: "AIzaSyBhrvzYM3kenz_Eo86xHxx_gLBC50lgpWY",
+      authDomain: "sary-su-construction.firebaseapp.com",
+      projectId: "sary-su-construction",
+      storageBucket: "sary-su-construction.appspot.com",
+      messagingSenderId: "682963406462",
+      appId: "1:682963406462:web:81872b1c2bed797abc922f",
+      measurementId: "G-8S24Q7GNFC"
     };
+
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
   </script>
 
+  <button type="button" id="btn" onclick="scrolltoTop()"><i class="fa fa-arrow-up"></i></button>
+  <script>
+    let button = document.getElementById("btn");
+
+    window.onscroll = function () {
+      if (document.documentElement.scrollTop > 70) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    }
+    function scrolltoTop() {
+      /*document.documentElement.scrollTop = 0;*/
+      scrollToTopAnimated();
+    }
+    function scrollToTopAnimated() {
+      const currentScroll = document.documentElement.scrollTop;
+
+      if (currentScroll > 0) {
+        window.requestAnimationFrame(scrollToTopAnimated);
+        document.documentElement.scrollTop = currentScroll - currentScroll / 10;
+      }
+    }
+  </script>
 </body>
 
 </html>

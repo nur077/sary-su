@@ -11,6 +11,7 @@
   background-size: cover;
   position: relative;
   scroll-snap-align: start;
+  overflow-x: hidden;
 }
 body{
   margin: 0;
@@ -22,6 +23,10 @@ body{
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+body.menu {
+  overflow: hidden;
+}
+
 .less-bold {
   font-weight: 400;
 }
@@ -73,7 +78,7 @@ nav img{
   background: #fff;
   display: block;
   margin: auto;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 .nav-links ul li:hover::after{
   width: 100%;
@@ -117,7 +122,7 @@ nav .fa{
 
 @media(max-width: 700px) {
   .text-box h1{
-    font-size: 20px;
+    font-size: 25px;
   }
   .nav-links ul li{
     display: block;
@@ -151,6 +156,11 @@ nav .fa{
     cursor: pointer;
   }
 }
+
+.no-scroll {
+  overflow: hidden;
+}
+
 
 /* about */
 .about{
@@ -197,7 +207,7 @@ ul.special li {
   text-align: left;
 }
 
-.service button{
+#btn{
   display: none;
   height: 40px;
   width: 40px;
@@ -211,13 +221,14 @@ ul.special li {
   cursor: pointer;
 }
 
-.service button i{
+#btn i{
   text-align: center;
   font-size: 20px;
   color: #fff;
 }
 
 /* photo */
+/*
 .photo {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -229,7 +240,6 @@ ul.special li {
   height: auto;
   width: auto;
   scroll-snap-align: start;
-  /*background: rgb(204, 204, 204);*/
 }
 
 .image-container {
@@ -265,6 +275,108 @@ ul.special li {
   object-fit: cover;
   border-radius: 8px;
 }
+*/
+
+/* Default styles for larger screens */
+/*     */
+.photo {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+  scroll-snap-align: start;
+}
+
+.image-container {
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.carousel {
+  position: relative;
+  height: 600px;
+  width: 400px;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper {
+  display: flex;
+  transform: translateX(0);
+  transition: all 0.5s ease-in-out;
+}
+
+.wrapper img {
+  height: 600px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 480px) {
+  .carousel {
+    width: 100%;
+    height: auto;
+  }
+
+  .wrapper img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .carousel {
+    width: 80%;
+    height: auto;
+  }
+
+  .wrapper img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .carousel {
+    width: 60%;
+    height: auto;
+  }
+
+  .wrapper img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .carousel {
+    width: 50%;
+    height: auto;
+  }
+
+  .wrapper img {
+    width: 100%;
+    height: auto;
+  }
+}
+/*     */
+
 .buttons{
   position: absolute;
   display: flex;
@@ -292,9 +404,86 @@ button:hover{
 }
 
 
+/*************/
+/*
+
+*/
+.container_ {
+  position: relative; /***/
+  padding: 2rem;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-wrapper{
+  position: relative;
+  max-width: 48rem;
+  max-height: 95vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider_{
+  display: flex;
+  /*aspect-ratio: 16 / 9;*/
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 0.5rem;
+}
+
+.slider_ img{
+  flex: 1 0 100%;
+  max-width: 100%; /****/
+  height: auto; /****/
+  scroll-snap-align: start;
+  object-fit: cover;
+  -webkit-object-fit: cover;
+}
+
+.slider-nav{
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slider-nav a {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.75;
+  transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover{
+  opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .slider-wrapper {
+    max-width: 100%;
+  }
+
+  .slider_ {
+    aspect-ratio: unset;
+  }
+
+  .slider-nav {
+    bottom: 0.5rem;
+  }
+}
+
+/*************/
+
 /* Contact */
 .contacts {
-  /*background: linear-gradient(to right, #ea1d6f 0%, #eb466b 100%);*/
   font-size: 12px;
 }
 
@@ -317,7 +506,6 @@ button:hover{
 
 .screen {
   position: relative;
-  /*background: #fff;*/ /*      */
   background: linear-gradient(to bottom, #93A5CF, #E4EfE9);
   border-radius: 15px;
 }
@@ -541,7 +729,27 @@ button:hover{
 /*         */
 /* footer */
 footer {
+  position: relative; /****/
   text-align: center;
   padding: 10px;
   background-color: #868F96;
 }
+
+.footer-text {
+  color: #403c3c;
+  font-size: 20px;
+  font-weight: 360;
+  line-height: 26px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .footer-text {
+    color: #403c3c;
+    font-size: 14px;
+    font-weight: 360;
+    line-height: 26px;
+    padding: 0px;
+  }
+}
+
